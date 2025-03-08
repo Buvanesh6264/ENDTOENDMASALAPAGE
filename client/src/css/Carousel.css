@@ -1,0 +1,23 @@
+.carousel {
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+  .small-img {
+    width: 10%;
+    margin: 0 5px;
+  }
+  
