@@ -1,0 +1,196 @@
+.order-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.order-container h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f3f3f3;
+}
+
+.address-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.get-location-btn {
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.get-location-btn:hover {
+    background-color: #e6b800;
+}
+
+.priority-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.priority-checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.order-btn:hover {
+    background-color: #e6b800;
+}
+.order-page {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .order-page label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  .order-page input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .order-page button {
+    width: 100%;
+    padding: 12px;
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .order-page button:hover {
+    background: #e6b800;
+  }
+  .order-page h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+@media (max-width: 768px) {
+    .order-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .get-location-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .order-page {
+        max-width: 90%;
+        padding: 15px;
+      }
+    .order-btn {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .order-container h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .order-page {
+        max-width: 70%;
+        padding: 15px;
+      }
+    .form-group input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .address-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .get-location-btn {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .order-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .priority-checkbox {
+        justify-content: center;
+    }
+}

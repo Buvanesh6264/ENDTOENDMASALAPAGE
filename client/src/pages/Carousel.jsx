@@ -1,66 +1,40 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap styles
-import "../css/Carousel.css"; // Add your custom styles
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import "../css/Carousel.css";
+import carosal1 from "../images/carosal1.jpg";
+import carosal2 from "../images/carosal2.jpg";
+import carosal3 from "../images/carosal3.jpg";
+import carosal4 from "../images/carosal4.jpg";
+
 
 const Carousel = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <div id="myCarousel" className="carousel slide" data-ride="carousel">
-      {/* Indicators */}
-      <ol className="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-
-      {/* Slides */}
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img 
-            src="https://source.unsplash.com/1600x900/?anime,landscape" 
-            alt="Anime Landscape 1" 
-            className="d-block w-100" 
-          />
-        </div>
-        <div className="carousel-item">
-          <img 
-            src="https://source.unsplash.com/1600x900/?anime,city" 
-            alt="Anime City" 
-            className="d-block w-100" 
-          />
-        </div>
-        <div className="carousel-item">
-          <img 
-            src="https://source.unsplash.com/1600x900/?anime,fantasy" 
-            alt="Anime Fantasy" 
-            className="d-block w-100" 
-          />
-          <div className="carousel-caption">
-            <img 
-              src="https://source.unsplash.com/100x100/?buy" 
-              alt="Buy It" 
-              className="small-img" 
-            />
-            <img 
-              src="https://source.unsplash.com/100x100/?food" 
-              alt="Taste It" 
-              className="small-img" 
-            />
-            <img 
-              src="https://source.unsplash.com/100x100/?feeling" 
-              alt="Feel It" 
-              className="small-img" 
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Controls */}
-      <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-      </a>
-      <a className="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-      </a>
+    <div className="carousel-container">
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+      >
+        <SwiperSlide>
+          <img src={carosal1} alt="Home view 1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={carosal2} alt="Home view 2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={carosal3} alt="Home view 3" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={carosal4} alt="Home view 4" />
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* box-sizing: border-box; */
+  }
+.about-container {
+    max-width: 100%;
+    /* margin: auto; */
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+}
+.about-banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    overflow: hidden;
+}
+
+.about-banner-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    margin:40px 80px 0px 80px;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+.about-container nav{
+    width: 100vw;
+}
+.about-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.about-image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-image-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.about-paragraph {
+    /* margin-top: 40px; */
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+    text-align: justify;
+    margin:40px 80px 0px 80px;
+}
+
+.vision-mission-section {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    flex-wrap: wrap; 
+}
+
+.vision, .mission {
+    /* flex: 1; */
+    padding: 20px;
+    max-width: 500px;
+}
+
+.highlight-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.vision p, .mission p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.advertisement-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+    padding: 50px 80px;
+}
+
+.advertisement-text {
+    flex: 1;
+    text-align: left;
+}
+
+.advertisement-text h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.highlight {
+    color: green;
+    font-weight: bold;
+}
+
+.advertisement-video {
+    flex: 1;
+    text-align: center;
+}
+
+.advertisement-video iframe {
+    width: 500px;
+    max-width: auto;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        margin: 0px 40px;
+        text-align: center;
+    }
+    .about-paragraph{
+        margin: 20px 40px;
+    }
+    .about-title {
+        font-size: 30px;
+    }
+
+    .about-description, .about-paragraph {
+        font-size: 15px;
+    }
+
+    .about-image {
+        max-width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        margin: 0px 20px;
+        gap: 20px;
+    }
+    .about-paragraph{
+        margin: 20px 20px;
+    }
+    .about-title {
+        font-size: 28px;
+    }
+
+    .about-description, .about-paragraph {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .vision-mission-section {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .vision, .mission {
+        max-width: 100%;
+    }
+
+    .highlight-text {
+        font-size: 22px;
+    }
+    .advertisement-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .advertisement-text {
+        text-align: center;
+    }
+
+    .advertisement-video iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .about-title {
+        font-size: 24px;
+    }
+
+    .about-description, .about-paragraph {
+        font-size: 13px;
+    }
+
+    .about-image {
+        max-width: 250px;
+    }
+
+    .highlight-text {
+        font-size: 20px;
+    }
+}
