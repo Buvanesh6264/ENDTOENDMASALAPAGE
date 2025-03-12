@@ -5,7 +5,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ShopNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [cartCount, setCartCount] = useState(2); 
   const [cartTotal, setCartTotal] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,12 +14,14 @@ const ShopNav = () => {
   }
   useEffect(()=>{
     const token = sessionStorage.getItem("token")
+    const total = sessionStorage.getItem("orderTotal")
     if(token){
       setIsLoggedIn(true)
     }
     else{
       setIsLoggedIn(false)
     }
+    setCartTotal(total)
   },[])
   
   const toggleModal = () => {
@@ -80,8 +81,7 @@ const ShopNav = () => {
 
         <a href="/cart" className="nav-cart">
           <i className="fa fa-shopping-bag nav-cart-icon"></i>
-          {/* {cartCount > 0 && <span className="nav-cart-badge">{cartCount}</span>} */}
-          <span className="nav-cart-price">₹ {cartTotal.toFixed(2)}</span>
+          <span className="nav-cart-price">₹ {cartTotal}</span>
         </a>
       </ul>
     </nav>

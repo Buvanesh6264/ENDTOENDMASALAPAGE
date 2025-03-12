@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "../css/placed.css";
 import ShopNav from "./ShopnowNav";
 
-const generateOrderId = () => {
-  return `#${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
-};
 
 const OrderConfirmation = () => {
   const [cart, setCart] = useState([]);
@@ -16,16 +13,12 @@ const OrderConfirmation = () => {
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    const storedTotal = localStorage.getItem("orderTotal") || 0;
+    const storedTotal = sessionStorage.getItem("orderamount") || 0;
     setCart(storedCart);
     setOrderTotal(storedTotal);
 
-    let storedOrderId = localStorage.getItem("orderId");
-    if (!storedOrderId) {
-      storedOrderId = generateOrderId();
-      localStorage.setItem("orderId", storedOrderId);
-    }
-    setOrderId(storedOrderId);
+      const randomStr = Math.random().toString(36).substr(2, 6).toUpperCase(); 
+      setOrderId(randomStr)
 
     const daysToAdd = Math.floor(Math.random() * 3) + 3;
     const delivery = new Date();
@@ -44,30 +37,12 @@ const OrderConfirmation = () => {
         <div className="delivery-time">
           <p>Estimated delivery: {deliveryDate}</p>
         </div>
-        <div className="order-details">
-          <h3>Items Ordered:</h3>
-          {cart.length > 0 ? (
-            cart.map((item) => (
-              <div key={item.id} className="order-item">
-                <p>
-                  <strong>
-                    {item.quantity}× {item.name}
-                  </strong>
-                </p>
-                <p>{item.weight}</p>
-                <p>₹ {item.price * item.quantity}</p>
-              </div>
-            ))
-          ) : (
-            <p>Your cart was empty.</p>
-          )}
-        </div>
         <div className="order-total">
           <p>
             <strong>To pay on delivery:</strong> ₹ {orderTotal}
           </p>
         </div>
-        <button className="gohome" onClick={() => navigate("/") }>Go to Home</button>
+        <button className="gohome" onClick={() => {navigate("/"); sessionStorage.removeItem("orderamount")}}>Go to Home</button>
       </div>
     </div>
   );

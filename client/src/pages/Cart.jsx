@@ -5,44 +5,116 @@ import "../css/cart.css";
 import ShopNav from "./ShopnowNav";
 import { useNavigate } from "react-router-dom";
 
-// const initialCart = [
-//   { id: 1, name: "Hotel Sambar Powder", price: 41, weight: "0.1", image: "sambar.png", quantity: 1 },
-//   { id: 2, name: "Chettinadu Biryani Masala Paste", price: 70, weight: "0.167", image: "biryani.png", quantity: 1 },
-//   { id: 3, name: "Kashmiri Chilli Powder", price: 103, weight: "0.1", image: "chilli.png", quantity: 1 },
-//   { id: 4, name: "Hotel Sambar Powder", price: 41, weight: "0.1", image: "sambar.png", quantity: 1 },
-//   { id: 5, name: "Chettinadu Biryani Masala Paste", price: 70, weight: "0.167", image: "biryani.png", quantity: 1 },
-//   { id: 6, name: "Kashmiri Chilli Powder", price: 103, weight: "0.1", image: "chilli.png", quantity: 1 }
-// ];
-
-
 const Cart = () => {
-  const [cart, setCart] = useState("");
+  const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     const token = sessionStorage.getItem("token");
-    if(!token){
-      navigate("/login")
+    if (!token) {
+      navigate("/login");
+      return;
     }
-  },[])
-  const updateQuantity = (id, amount) => {
-    setCart(cart.map(item => 
-      item.id === id ? { ...item, quantity: Math.max(1, item.quantity + amount) } : item
-    ));
+  
+    const fetchCart = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/getuser", {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+  
+        if (!res.ok) {
+          throw new Error("Failed to fetch cart data");
+        }
+  
+        const data = await res.json();
+        setCart(data.cart || []);
+      } catch (error) {
+        console.error("Error fetching cart:", error);
+      }
+    };
+  
+    fetchCart();
+
+  }, [navigate]);
+  
+  const updateQuantity = async (productId, amount) => {
+    const updatedItem = cart.find(item => item.productId === productId);
+    if (!updatedItem) return;
+  
+    const newQuantity = updatedItem.quantity + amount;
+  
+    try {
+      const token = sessionStorage.getItem("token");
+      const res = await fetch("http://localhost:5000/update-cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ productId, quantity: newQuantity }),
+      });
+  
+      const data = await res.json();
+      if (res.ok) {
+        setCart(data.cart);
+      }
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
   };
+  
+  
 
-  const removeItem = (id) => {
-    setCart(cart.filter(item => item.id !== id));
+  const removeItem = async (productId) => {
+    try {
+      const token = sessionStorage.getItem("token");
+      const res = await fetch("http://localhost:5000/remove-from-cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ productId }),
+      });
+  
+      const data = await res.json();
+      if (res.ok) {
+        setCart(data.cart);
+      }
+    } catch (error) {
+      console.error("Error removing item:", error);
+    }
   };
+  
+  
 
-  const clearCart = () => {
-    setCart([]);
+  const clearCart = async () => {
+    try {
+      const token = sessionStorage.getItem("token");
+      const res = await fetch("http://localhost:5000/clear-cart", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+  
+      const data = await res.json();
+      if (res.ok) {
+        setCart([]);
+      }
+    } catch (error) {
+      console.error("Error clearing cart:", error);
+    }
   };
+  
 
-  // const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  // const totalWeight = cart.reduce((total, item) => total + parseFloat(item.weight) * item.quantity, 0);
+const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+const totalWeight = cart.reduce((total, item) => total + parseFloat(item.size) * item.quantity, 0);
+useEffect(()=>{
+  sessionStorage.setItem("orderTotal" , subtotal);
+},[subtotal])
 
-  // sessionStorage.setItem("orderTotal", "subtotal");
 
   return (
     <div>
@@ -63,20 +135,20 @@ const Cart = () => {
             <div className="cart-message">🔥 Fantastic choice! This is one of our favorites 😍</div>
 
             <div className="cart-items">
-              {cart.map(item => (
-                <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.name} className="cart-item-image" />
+                {cart.map(item => (
+                  <div key={item.productId} className="cart-item">
+                  {/* <img src={item.image} alt={item.name} className="cart-item-image" /> */}
                   <div className="cart-item-details">
                     <h2>{item.name}</h2>
                     <p>₹ {item.price}</p>
-                    <p>Size: {item.weight} kg</p>
+                    <p>Size: {item.size} kg</p>
                   </div>
                   <div className="cart-quantity">
-                    <button onClick={() => updateQuantity(item.id, -1)}>−</button>
+                    <button onClick={() => updateQuantity(item.productId, -1)}>−</button>
                     <input type="text" value={item.quantity} readOnly />
-                    <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                    <button onClick={() => updateQuantity(item.productId, 1)}>+</button>
                   </div>
-                  <FontAwesomeIcon icon={faTrash} className="delete-icon" onClick={() => removeItem(item.id)} />
+                  <FontAwesomeIcon icon={faTrash} className="delete-icon" onClick={() => removeItem(item.productId)} />
                   <p className="cart-item-price">₹ {item.price * item.quantity}</p>
                 </div>
               ))}
@@ -85,8 +157,9 @@ const Cart = () => {
             <button className="clear-cart-button" onClick={clearCart}>Clear Cart</button>
 
             <div className="cart-summary">
-              <p>Subtotal: <strong>₹ {"subtotal"}</strong></p>
-              <p>Total Order Weight: <strong>{"totalWeight".toFixed(2)} kg</strong></p>
+              <p>Subtotal: <strong>₹ {subtotal}</strong></p>
+              <p>Total Order Weight: <strong>{totalWeight.toFixed(2)} kg</strong></p>
+
               <p>Shipping calculated at checkout</p>
               <button className="checkout-button" onClick={() => navigate("/order")}>Checkout</button>
             </div>
