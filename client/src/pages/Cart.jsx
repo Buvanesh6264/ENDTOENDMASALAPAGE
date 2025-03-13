@@ -4,6 +4,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "../css/cart.css"; 
 import ShopNav from "./ShopnowNav";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -97,9 +98,7 @@ const Cart = () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      });
-  
-      const data = await res.json();
+      });  
       if (res.ok) {
         setCart([]);
       }
@@ -166,6 +165,7 @@ useEffect(()=>{
           </>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

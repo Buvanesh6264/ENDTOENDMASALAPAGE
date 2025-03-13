@@ -57,7 +57,7 @@ const ShopNav = () => {
           <div className="profile-modal">
             {isLoggedIn ? (
               <>
-                <a href="/account" className="modal-item">
+                <a href="/profile" className="modal-item">
                   <i className="fa fa-user"></i> My Account
                 </a>
                 <a href="/login" className="modal-item" onClick={() => {setIsLoggedIn(false);sessionStorage.clear("token")}}>

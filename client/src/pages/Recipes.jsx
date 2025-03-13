@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/recipes.css"; 
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 const categories = ["All", "Veg", "Non-Veg"];
 
@@ -9,6 +11,7 @@ function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const navigate = useNavigate(); 
   const limit = 5; 
 
   useEffect(() => {
@@ -43,13 +46,11 @@ function Recipes() {
       
       <div className="category-filters">
         {categories.map((category) => (
-          <button
-            key={category}
-            className={selectedCategory === category ? "active" : ""}
-            onClick={() => {
-              setSelectedCategory(category);
-              setCurrentPage(1); 
-            }}
+          <button key={category} className={selectedCategory === category ? "active" : ""}
+          onClick={() => {
+            setSelectedCategory(category);
+            setCurrentPage(1); 
+          }}
           >
             {category}
           </button>
@@ -57,21 +58,23 @@ function Recipes() {
       </div>
 
       <div className="recipes-list">
-        {recipes.map((recipe) => (
-          <div key={recipe.id} className="recipe-card">
-            <img src={recipe.image} alt={recipe.name} className="dish-image" />
-            <div className="recipe-info">
-              <h3>
-                {recipe.name}{" "}
-                <span className={`veg-icon ${recipe.type === "Veg" ? "veg" : "non-veg"}`}></span>
-              </h3>
-              <p>👥 {recipe.servings} ⏳ {recipe.time}</p>
-              <p>{recipe.description}</p>
-              <a href="#">VIEW RECIPE →</a>
-            </div>
+      {recipes.map((recipe) => (
+        <div key={recipe.id} className="recipe-card">
+          <img src={recipe.image} alt={recipe.name} className="dish-image" />
+          <div className="recipe-info">
+            <h3>
+              {recipe.name}
+              <span className={`veg-icon ${recipe.type === "Veg" ? "veg" : "non-veg"}`}></span>
+            </h3>
+            <p>👥 {recipe.servings} ⏳ {recipe.time}</p>
+            <p>{recipe.description}</p>
+            <button className="view-recipe-btn" onClick={() => navigate("/recipeinfo", { state: { recipe } })}>
+              VIEW RECIPE →
+            </button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
 
       <div className="pagination">
         <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
@@ -82,6 +85,7 @@ function Recipes() {
           Next
         </button>
       </div>
+      <Footer/>
     </div>
   );
 }

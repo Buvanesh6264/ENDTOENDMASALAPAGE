@@ -12,6 +12,8 @@ import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import OrderPage from './pages/Order.jsx';
 import OrderConfirmation from './pages/Ordercomfm.jsx';
+import Profile from './pages/Profile.jsx';
+import Recipeinfo from './pages/Recipeinfo.jsx';
 
 const AppRouter = () => {
     return (
@@ -20,6 +22,7 @@ const AppRouter = () => {
             <Route path="/aboutus" element={< About/>} />
             <Route path="/products" element={<Prroducts />} />
             <Route path="/recipes" element={< Recipes/>} />
+            <Route path="/recipeinfo" element={< Recipeinfo/>} />
             <Route path="/shop" element={< Shop/>} />
             <Route path="/contactus" element={< Contact/>} />
             <Route path="/cart" element={< Cart/>} />
@@ -27,6 +30,7 @@ const AppRouter = () => {
             <Route path="/placed" element={< OrderConfirmation/>} />
             <Route path="/login" element={< Login/>} />
             <Route path="/register" element={< Signup/>} />
+            <Route path="/profile" element={< Profile/>} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );

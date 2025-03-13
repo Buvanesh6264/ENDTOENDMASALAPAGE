@@ -2,6 +2,7 @@
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .recipes-banner {
@@ -88,11 +89,11 @@
   text-align: justify;
 }
 
-.recipe-info a {
+/* .recipe-info a {
   font-weight: bold;
   color: orange;
   text-decoration: none;
-}
+} */
 
 .spice-image {
   position: absolute;
@@ -133,7 +134,40 @@
   font-weight: bold;
   color: #333;
 }
+.recipes-page footer{
+  margin-top: 10px;
+}
+.view-recipe-btn {
+  background: linear-gradient(135deg, #ff6600, #ff3300);
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
+.view-recipe-btn:hover {
+  background: linear-gradient(135deg, #ff3300, #cc2900);
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(255, 51, 0, 0.3);
+}
+
+.view-recipe-btn:active {
+  transform: scale(0.98);
+}
+
+.view-recipe-btn:focus {
+  outline: none;
+}
 
 @media (max-width: 768px) {
   .recipe-card {

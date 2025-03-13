@@ -2,6 +2,7 @@ import React from "react";
 import "../css/aboutus.css";
 import Nav from "./Nav";
 import md from "../images/md.jpg";
+import Footer from "./Footer";
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
             100% Natural and High Quality of Pure Spices Products had its birth as a cottage
             industry with a investment of Rs. 50,00,000/- The founder <strong>Dr. R.Duraisamy</strong> ventured into trading turmeric in 2014 and then into manufacturing pure 
             spice powders like turmeric powder, chilli powder, coriander powder, and expanded his expertise into producing 
-            various masala powders. He promoted Jayashree foods India PVT Trading Company and marketed his products in the brand name <strong>ABHIRRA</strong>.
+            various masala powders. He promoted Jai Sakthi Foods India Private Limited   Trading Company and marketed his products in the brand name <strong>ABHIRRA</strong>.
           </p>
         </div>
 
@@ -67,6 +68,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -142,6 +142,9 @@
   font-weight: bold;
   color: #333;
 }
+.products-page footer{
+  margin-top: 10px;
+}
 
 @media (max-width: 768px) {
   .products-banner-image {

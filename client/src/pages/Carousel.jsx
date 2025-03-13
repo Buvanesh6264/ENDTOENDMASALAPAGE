@@ -7,7 +7,7 @@ import "../css/Carousel.css";
 import carosal1 from "../images/carosal1.jpg";
 import carosal2 from "../images/carosal2.jpg";
 import carosal3 from "../images/carosal3.jpg";
-import carosal4 from "../images/carosal4.jpg";
+// import carosal4 from "../images/carosal4.jpg";
 
 
 const Carousel = () => {
@@ -31,9 +31,9 @@ const Carousel = () => {
         <SwiperSlide>
           <img src={carosal3} alt="Home view 3" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src={carosal4} alt="Home view 4" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );

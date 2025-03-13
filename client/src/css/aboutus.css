@@ -5,11 +5,18 @@
     /* box-sizing: border-box; */
   }
 .about-container {
-    max-width: 100%;
+    max-width: 100vw;
     /* margin: auto; */
-    padding: 50px 20px;
+    /* padding: 50px 20px; */
     font-family: 'Arial', sans-serif;
 }
+/* .about-container nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: -20;
+} */
+
 .about-banner {
     width: 100%;
     height: auto;
@@ -20,7 +27,7 @@
 }
 
 .about-banner-image {
-    width: 100%;
+    width: 100vw;
     max-height: 300px;
     object-fit: cover;
 }
@@ -36,9 +43,9 @@
 .about-text {
     flex: 1;
 }
-.about-container nav{
+/* .about-container nav{
     width: 100vw;
-}
+} */
 .about-subtitle {
     font-size: 14px;
     font-weight: bold;

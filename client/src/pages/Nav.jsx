@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../css/Nav.css";
 import logo from "../images/Product.png";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,24 +27,26 @@ const Nav = () => {
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <button className="close-btn" onClick={() => setIsOpen(false)} aria-label="Close Menu">×</button>
         <ul className="sidebar-links">
-          <li><a href="/">HOME</a></li>
-          <li><a href="/aboutus">About Us</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/shop">Shop Now</a></li>
-          <li><a href="/recipes">Recipes</a></li>
-          <li><a href="/contactus">Contact Us</a></li>
+          {["/", "/aboutus", "/products", "/shop", "/recipes", "/contactus"].map((path, index) => (
+            <li key={index}>
+              <a href={path} className={location.pathname === path ? "active-link" : ""}>
+                {path === "/" ? "Home" : path.replace("/", "").replace(/-/g, " ")}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
       {isOpen && <div className="overlay active" onClick={() => setIsOpen(false)}></div>}
 
       <ul className="nav-links">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/aboutus">About Us</a></li>
-        <li><a href="/products">Products</a></li>
-        <li><a href="/shop">Shop Now</a></li>
-        <li><a href="/recipes">Recipes</a></li>
-        <li><a href="/ContactUs">Contact Us</a></li>
+        {["/", "/AboutUs", "/Products", "/Shop", "/Recipes", "/ContactUs"].map((path, index) => (
+          <li key={index}>
+            <a href={path} className={location.pathname === path ? "active-link" : ""}>
+              {path === "/" ? "Home" : path.replace("/", "").replace(/-/g, " ")}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -162,6 +162,24 @@ app.get("/getrecipes", async (req, res) => {
   }
 });
 
+app.get("/homepagerecipes", async (req, res) => {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionNameforrecipes);
+
+    const recipes = await collection.find({}).limit(1).toArray();
+    res.status(200).json({ recipes });
+  } catch (error) {
+    res.status(400).json({ error: "Error fetching recipes" });
+  } finally {
+    await client.close();
+  }
+});
+
+
+
 app.get("/getvegrecipes", async (req, res) => {
   const client = new MongoClient(uri);
   try {
@@ -214,21 +232,21 @@ app.get("/getnonvegrecipes", async (req, res) => {
   }
 });
 
-app.post("/addrecipe", async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionNameforrecipes);
+// app.post("/addrecipe", async (req, res) => {
+//   const client = new MongoClient(uri);
+//   try {
+//     await client.connect();
+//     const db = client.db(dbName);
+//     const collection = db.collection(collectionNameforrecipes);
 
-    await collection.insertOne(req.body);
-    res.status(201).json({ message: "Recipe added successfully!" });
-  } catch (error) {
-    res.status(400).json({ error: "Error adding recipe" });
-  } finally {
-    await client.close();
-  }
-});
+//     await collection.insertOne(req.body);
+//     res.status(201).json({ message: "Recipe added successfully!" });
+//   } catch (error) {
+//     res.status(400).json({ error: "Error adding recipe" });
+//   } finally {
+//     await client.close();
+//   }
+// });
 
 app.get("/getshopproducts", async (req, res) => {
   const client = new MongoClient(uri);

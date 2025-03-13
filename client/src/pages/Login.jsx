@@ -4,6 +4,7 @@ import "../css/login.css";
 import {  useNavigate } from 'react-router-dom';
 import ShopNav from "./ShopnowNav";
 import { Link } from "react-router-dom"; 
+import Footer from "./Footer";
 
 export default function Login() {
   const [phone, setPhone] = useState("");
@@ -42,33 +43,13 @@ export default function Login() {
           <p>Enter your contact number to login.</p>
           <form onSubmit={handleSubmit} className="login-form">
             <div className="phone-input">
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
+              <input type="text" name="phone" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
             </div>
             <div className="password-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="pass"
-              />
+              <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required className="pass" />
             </div>
             <div className="checkbox-container">
-              <input
-                type="checkbox"
-                id="showPassword"
-                checked={showPassword}
-                onChange={() => setShowPassword(!showPassword)}
-              />
+              <input type="checkbox" id="showPassword" checked={showPassword} onChange={() => setShowPassword(!showPassword)}/>
               <label htmlFor="showPassword">Show Password</label>
             </div>
             <button className="next" type="submit">Next</button>
@@ -80,6 +61,7 @@ export default function Login() {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

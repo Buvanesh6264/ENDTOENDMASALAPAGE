@@ -5,6 +5,7 @@ import "../css/shop.css";
 import ShopNav from "./ShopnowNav";
 import cover from '../images/productscover.jpg';
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 
 const Shop = () => {
@@ -69,10 +70,10 @@ const Shop = () => {
   };
 
   const handleAddToCart = async (product) => {
-    const token = sessionStorage.getItem("token"); // Get token from session storage
+    const token = sessionStorage.getItem("token");
 
     if (!token) {
-        navigate("/login"); // Redirect if user is not logged in
+        navigate("/login"); 
         return;
     }
 
@@ -116,12 +117,7 @@ const Shop = () => {
             <ul className="sidebar-list">
               {["20g", "50g", "100g", "500g"].map(size => (
                 <li key={size}>
-                  <input
-                    type="checkbox"
-                    className="filter-checkbox"
-                    checked={selectedSizes.includes(size)}
-                    onChange={() => handleSizeFilterChange(size)}
-                  />
+                  <input type="checkbox" className="filter-checkbox" checked={selectedSizes.includes(size)} onChange={() => handleSizeFilterChange(size)} />
                   {size}
                 </li>
               ))}
@@ -132,21 +128,11 @@ const Shop = () => {
             <h3 className="sidebar-subtitle">Availability</h3>
             <ul className="sidebar-list">
               <li>
-                <input
-                  type="checkbox"
-                  className="filter-checkbox"
-                  checked={availabilityFilter.includes("inStock")}
-                  onChange={() => handleAvailabilityFilterChange("inStock")}
-                />
+                <input type="checkbox" className="filter-checkbox" checked={availabilityFilter.includes("inStock")} onChange={() => handleAvailabilityFilterChange("inStock")}/>
                 In Stock
               </li>
               <li>
-                <input
-                  type="checkbox"
-                  className="filter-checkbox"
-                  checked={availabilityFilter.includes("outOfStock")}
-                  onChange={() => handleAvailabilityFilterChange("outOfStock")}
-                />
+                <input type="checkbox" className="filter-checkbox" checked={availabilityFilter.includes("outOfStock")} onChange={() => handleAvailabilityFilterChange("outOfStock")}/>
                 Out of Stock
               </li>
             </ul>
@@ -208,6 +194,7 @@ const Shop = () => {
 
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

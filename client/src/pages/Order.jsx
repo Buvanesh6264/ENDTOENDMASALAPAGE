@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/order.css";
 import ShopNav from "./ShopnowNav";
+import Footer from "./Footer";
 
 export default function OrderPage() {
   const [phone, setPhone] = useState("");
@@ -130,6 +131,7 @@ const getLocation = async () => {
 
         <button onClick={placeOrder}>Order Now</button>
       </div>
+      <Footer/>
     </div>
   );
 }

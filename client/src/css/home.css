@@ -190,7 +190,7 @@
 
 .recipe-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 50px;
   max-width: 1100px;
@@ -202,7 +202,8 @@
 }
 
 .dish-image {
-  width: 280px;
+  width: 480px;
+  height: 150px;
   border-radius: 50%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -214,7 +215,7 @@
 }
 
 .recipe-details {
-  max-width: 350px;
+  max-width: 550px;
   text-align: center;
 }
 

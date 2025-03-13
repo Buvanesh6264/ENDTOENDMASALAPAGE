@@ -2,19 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/placed.css";
 import ShopNav from "./ShopnowNav";
+import Footer from "./Footer";
 
 
 const OrderConfirmation = () => {
-  const [cart, setCart] = useState([]);
   const [orderTotal, setOrderTotal] = useState(0);
   const [deliveryDate, setDeliveryDate] = useState("");
   const [orderId, setOrderId] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     const storedTotal = sessionStorage.getItem("orderamount") || 0;
-    setCart(storedCart);
     setOrderTotal(storedTotal);
 
       const randomStr = Math.random().toString(36).substr(2, 6).toUpperCase(); 
@@ -44,6 +42,7 @@ const OrderConfirmation = () => {
         </div>
         <button className="gohome" onClick={() => {navigate("/"); sessionStorage.removeItem("orderamount")}}>Go to Home</button>
       </div>
+      <Footer/>
     </div>
   );
 };

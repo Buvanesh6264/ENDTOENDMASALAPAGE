@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/signup.css";
 import ShopNav from "./ShopnowNav";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -62,39 +63,13 @@ export default function Signup() {
           <h2>Sign Up</h2>
           <p>Create your account</p>
           <form onSubmit={handleSubmit} className="signup-form">
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
+            <input type="text" name="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            <input type="text" name="phone" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required/>
             <div className="password-container">
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
             <div className="checkbox-container">
-              <input
-                type="checkbox"
-                id="showPassword"
-                checked={showPassword}
-                onChange={() => setShowPassword(!showPassword)}
-              />
+              <input type="checkbox" id="showPassword" checked={showPassword} onChange={() => setShowPassword(!showPassword)} />
               <label htmlFor="showPassword">Show Password</label>
             </div>
             <button type="submit">Sign Up</button>
@@ -106,6 +81,7 @@ export default function Signup() {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

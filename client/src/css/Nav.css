@@ -1,11 +1,14 @@
+body{
+  width: 100vw;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 70px;
-  padding: 15px 20px;
-  position: fixed;
+  padding: 15px 20px !important;
+  position: sticky !important;
   top: 0;
   left: 0;
   background-color: transparent;
@@ -107,6 +110,23 @@
 .overlay.active {
   display: block;
 }
+.active-link {
+  position: relative;
+  font-weight: bold;
+  color: hsla(208, 56%, 54%, 1);
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 90%;
+  height: 3px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
 
 @media (max-width: 768px) {
   .toggle-button {

@@ -1,7 +1,7 @@
 .contact-page {
   text-align: center;
   font-family: Arial, sans-serif;
-  padding: 50px 20px;
+  /* padding: 50px 20px; */
 }
 
 .contact-banner {
@@ -165,7 +165,6 @@
   border-radius: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .contact-form {
       width: 70%;

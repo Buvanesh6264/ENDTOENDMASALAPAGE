@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/Products.css';
 import Nav from './Nav';
 import cover from '../images/productscover.jpg';
+import Footer from './Footer';
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -105,6 +106,7 @@ const Products = () => {
           </div>
         </>
       )}
+      <Footer/>
     </div>
   );
 };
