@@ -137,100 +137,98 @@ app.get("/getcategories", async (req, res) => {
     }
   });
  
-app.get("/getrecipes", async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionNameforrecipes);
+// app.get("/getrecipes", async (req, res) => {
+//   const client = new MongoClient(uri);
+//   try {
+//     await client.connect();
+//     const db = client.db(dbName);
+//     const collection = db.collection(collectionNameforrecipes);
 
-    const { page = 1, limit = 5 } = req.query;
-    const options = {
-      skip: (parseInt(page) - 1) * parseInt(limit),
-      limit: parseInt(limit),
-    };
+//     const { page = 1, limit = 5 } = req.query;
+//     const options = {
+//       skip: (parseInt(page) - 1) * parseInt(limit),
+//       limit: parseInt(limit),
+//     };
 
-    const recipes = await collection.find({}).skip(options.skip).limit(options.limit).toArray();
-    const totalRecipes = await collection.countDocuments({});
-    const totalPages = Math.ceil(totalRecipes / parseInt(limit));
+//     const recipes = await collection.find({}).skip(options.skip).limit(options.limit).toArray();
+//     const totalRecipes = await collection.countDocuments({});
+//     const totalPages = Math.ceil(totalRecipes / parseInt(limit));
 
-    res.status(200).json({ recipes, totalPages });
-  } catch (error) {
-    res.status(400).json({ error: "Error fetching recipes" });
-  } finally {
-    await client.close();
-  }
-});
+//     res.status(200).json({ recipes, totalPages });
+//   } catch (error) {
+//     res.status(400).json({ error: "Error fetching recipes" });
+//   } finally {
+//     await client.close();
+//   }
+// });
 
-app.get("/homepagerecipes", async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionNameforrecipes);
+// app.get("/homepagerecipes", async (req, res) => {
+//   const client = new MongoClient(uri);
+//   try {
+//     await client.connect();
+//     const db = client.db(dbName);
+//     const collection = db.collection(collectionNameforrecipes);
 
-    const recipes = await collection.find({}).limit(1).toArray();
-    res.status(200).json({ recipes });
-  } catch (error) {
-    res.status(400).json({ error: "Error fetching recipes" });
-  } finally {
-    await client.close();
-  }
-});
+//     const recipes = await collection.find({}).limit(1).toArray();
+//     res.status(200).json({ recipes });
+//   } catch (error) {
+//     res.status(400).json({ error: "Error fetching recipes" });
+//   } finally {
+//     await client.close();
+//   }
+// });
 
+// app.get("/getvegrecipes", async (req, res) => { 
+//   const client = new MongoClient(uri);
+//   try {
+//     await client.connect();
+//     const db = client.db(dbName);
+//     const collection = db.collection(collectionNameforrecipes);
 
+//     const { page = 1, limit = 5 } = req.query;
+//     const query = { type: "Veg" };
+//     const options = {
+//       skip: (parseInt(page) - 1) * parseInt(limit),
+//       limit: parseInt(limit),
+//     };
 
-app.get("/getvegrecipes", async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionNameforrecipes);
+//     const recipes = await collection.find(query).skip(options.skip).limit(options.limit).toArray();
+//     const totalRecipes = await collection.countDocuments(query);
+//     const totalPages = Math.ceil(totalRecipes / parseInt(limit));
 
-    const { page = 1, limit = 5 } = req.query;
-    const query = { type: "Veg" };
-    const options = {
-      skip: (parseInt(page) - 1) * parseInt(limit),
-      limit: parseInt(limit),
-    };
+//     res.status(200).json({ recipes, totalPages });
+//   } catch (error) {
+//     res.status(400).json({ error: "Error fetching Veg recipes" });
+//   } finally {
+//     await client.close();
+//   }
+// });
 
-    const recipes = await collection.find(query).skip(options.skip).limit(options.limit).toArray();
-    const totalRecipes = await collection.countDocuments(query);
-    const totalPages = Math.ceil(totalRecipes / parseInt(limit));
+// app.get("/getnonvegrecipes", async (req, res) => {
+//   const client = new MongoClient(uri);
+//   try {
+//     await client.connect();
+//     const db = client.db(dbName);
+//     const collection = db.collection(collectionNameforrecipes);
 
-    res.status(200).json({ recipes, totalPages });
-  } catch (error) {
-    res.status(400).json({ error: "Error fetching Veg recipes" });
-  } finally {
-    await client.close();
-  }
-});
+//     const { page = 1, limit = 5 } = req.query;
+//     const query = { type: "Non-Veg" };
+//     const options = {
+//       skip: (parseInt(page) - 1) * parseInt(limit),
+//       limit: parseInt(limit),
+//     };
 
-app.get("/getnonvegrecipes", async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(collectionNameforrecipes);
+//     const recipes = await collection.find(query).skip(options.skip).limit(options.limit).toArray();
+//     const totalRecipes = await collection.countDocuments(query);
+//     const totalPages = Math.ceil(totalRecipes / parseInt(limit));
 
-    const { page = 1, limit = 5 } = req.query;
-    const query = { type: "Non-Veg" };
-    const options = {
-      skip: (parseInt(page) - 1) * parseInt(limit),
-      limit: parseInt(limit),
-    };
-
-    const recipes = await collection.find(query).skip(options.skip).limit(options.limit).toArray();
-    const totalRecipes = await collection.countDocuments(query);
-    const totalPages = Math.ceil(totalRecipes / parseInt(limit));
-
-    res.status(200).json({ recipes, totalPages });
-  } catch (error) {
-    res.status(400).json({ error: "Error fetching Non-Veg recipes" });
-  } finally {
-    await client.close();
-  }
-});
+//     res.status(200).json({ recipes, totalPages });
+//   } catch (error) {
+//     res.status(400).json({ error: "Error fetching Non-Veg recipes" });
+//   } finally {
+//     await client.close();
+//   }
+// });
 
 // app.post("/addrecipe", async (req, res) => {
 //   const client = new MongoClient(uri);
@@ -247,6 +245,34 @@ app.get("/getnonvegrecipes", async (req, res) => {
 //     await client.close();
 //   }
 // });
+
+app.get("/getrecipes", async (req, res) => {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionNameforrecipes);
+
+    const { page = 1, limit = 5, type } = req.query;
+    const query = type && type !== "All" ? { type } : {}; // Apply filter only if type is provided and not "All"
+
+    const options = {
+      skip: (parseInt(page) - 1) * parseInt(limit),
+      limit: parseInt(limit),
+    };
+
+    const recipes = await collection.find(query).skip(options.skip).limit(options.limit).toArray();
+    const totalRecipes = await collection.countDocuments(query);
+    const totalPages = Math.ceil(totalRecipes / parseInt(limit));
+
+    res.status(200).json({ recipes, totalPages });
+  } catch (error) {
+    res.status(400).json({ error: "Error fetching recipes" });
+  } finally {
+    await client.close();
+  }
+});
+
 
 app.get("/getshopproducts", async (req, res) => {
   const client = new MongoClient(uri);
@@ -342,7 +368,7 @@ app.get("/getuser", authenticateToken, async (req, res) => {
 
       console.log("Extracted Phone from Token:", req.user.phone); 
 
-      const user = await collection.findOne({ phone: req.user.phone });
+      const user = await collection.findOne({ phone: req.user.phone} );
 
       console.log("MongoDB User Data:", user); 
 

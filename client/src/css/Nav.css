@@ -23,45 +23,7 @@ body{
   object-fit: contain;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;  
-  width: 250px;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.9);
-  padding-top: 60px;
-  transition: left 0.3s ease-in-out;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1001;
-}
 
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar-links {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.sidebar-links li {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-  color: #000;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: black;
-}
 
 .nav-links {
   list-style: none;
@@ -96,20 +58,6 @@ body{
   border: none;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 900;
-  display: none;
-}
-
-.overlay.active {
-  display: block;
-}
 .active-link {
   position: relative;
   font-weight: bold;
@@ -126,6 +74,75 @@ body{
   background-color: black;
   transform: translateX(-50%);
 }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.sidebar-links li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-links li a {
+  display: block;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-links li a:hover {
+  color: hsla(208, 56%, 54%, 0.8);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
 
 
 @media (max-width: 768px) {

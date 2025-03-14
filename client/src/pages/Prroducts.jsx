@@ -27,6 +27,9 @@ const Products = () => {
 
     fetchCategories();
   }, []);
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -46,6 +49,7 @@ const Products = () => {
     };
 
     fetchProducts();
+    window.scrollTo(0, 0);
   }, [selectedCategory, currentPage]);
 
   return (
@@ -90,20 +94,15 @@ const Products = () => {
           </div>
           
           <div className="pagination">
-            <button
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage(currentPage - 1)}
-            >
+            <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
               Previous
             </button>
             <span>Page {currentPage} of {totalPages}</span>
-            <button
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage(currentPage + 1)}
-            >
+            <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>
               Next
             </button>
           </div>
+
         </>
       )}
       <Footer/>

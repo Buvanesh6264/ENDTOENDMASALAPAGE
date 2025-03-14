@@ -37,10 +37,10 @@ const ShopNav = () => {
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <button className="ShopNav-close-btn" onClick={toggleSidebar}>×</button>
         <ul className="ShopNav-sidebar-links">
-          <li><a href="/">HOME</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/shop">Shop Now</a></li>
-          <li><a href="/profile">PROFILE</a></li>
-          <li><a href="/cart">CART</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/cart">Cart</a></li>
         </ul>
       </div>
 

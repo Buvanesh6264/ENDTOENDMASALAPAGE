@@ -14,7 +14,7 @@ function Homepage() {
   const currentIndex =0;
 
   useEffect(() => {
-    fetch("http://localhost:5000/homepagerecipes")
+    fetch("http://localhost:5000/getrecipes?page=1&limit=1")
       .then((response) => response.json())
       .then((data) => {
         if (data.recipes && data.recipes.length > 0) {

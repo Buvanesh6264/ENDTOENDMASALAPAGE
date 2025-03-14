@@ -47,6 +47,7 @@ const Shop = () => {
     };
   
     fetchProducts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [selectedSizes, availabilityFilter, page]);
   
 
@@ -99,6 +100,10 @@ const Shop = () => {
     } catch (error) {
         console.error("Error adding to cart:", error);
     }
+};
+
+const handlePageChange = (newPage) => {
+  setPage(newPage);
 };
 
 
@@ -182,14 +187,15 @@ const Shop = () => {
           </div>
 
           <div className="pagination">
-            <button disabled={page === 1} onClick={() => setPage(prev => Math.max(prev - 1, 1))}>
+            <button disabled={page === 1} onClick={() => handlePageChange(page - 1)}>
               Previous
             </button>
             <span> Page {page} of {totalPages} </span>
-            <button disabled={page >= totalPages} onClick={() => setPage(prev => prev + 1)}>
+            <button disabled={page >= totalPages} onClick={() => handlePageChange(page + 1)}>
               Next
             </button>
           </div>
+
 
 
         </div>

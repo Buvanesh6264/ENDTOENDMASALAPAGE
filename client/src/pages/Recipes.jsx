@@ -16,19 +16,34 @@ function Recipes() {
 
   useEffect(() => {
     fetchRecipes();
+    window.scrollTo(0, 0);
   }, [selectedCategory, currentPage]);
+ 
 
+  // const fetchRecipes = async () => {
+  //   let apiUrl = "http://localhost:5000/getrecipes";
+
+  //   if (selectedCategory === "Veg") {
+  //     apiUrl = "http://localhost:5000/getvegrecipes"; 
+  //   } else if (selectedCategory === "Non-Veg") {
+  //     apiUrl = "http://localhost:5000/getnonvegrecipes"; 
+  //   }
+
+  //   try {
+  //     const response = await fetch(`${apiUrl}?page=${currentPage}&limit=${limit}`);
+  //     const data = await response.json();
+  //     setRecipes(data.recipes);
+  //     setTotalPages(data.totalPages);
+  //   } catch (error) {
+  //     console.error("Error fetching recipes:", error);
+  //   }
+  // };
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage); 
+  };
   const fetchRecipes = async () => {
-    let apiUrl = "http://localhost:5000/getrecipes";
-
-    if (selectedCategory === "Veg") {
-      apiUrl = "http://localhost:5000/getvegrecipes"; 
-    } else if (selectedCategory === "Non-Veg") {
-      apiUrl = "http://localhost:5000/getnonvegrecipes"; 
-    }
-
     try {
-      const response = await fetch(`${apiUrl}?page=${currentPage}&limit=${limit}`);
+      const response = await fetch(`http://localhost:5000/getrecipes?page=${currentPage}&limit=${limit}&type=${selectedCategory}`);
       const data = await response.json();
       setRecipes(data.recipes);
       setTotalPages(data.totalPages);
@@ -36,7 +51,7 @@ function Recipes() {
       console.error("Error fetching recipes:", error);
     }
   };
-
+  
   return (
     <div className="recipes-page">
       <Nav />
@@ -77,11 +92,11 @@ function Recipes() {
     </div>
 
       <div className="pagination">
-        <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
+        <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
           Previous
         </button>
         <span>Page {currentPage} of {totalPages}</span>
-        <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
+        <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>
           Next
         </button>
       </div>

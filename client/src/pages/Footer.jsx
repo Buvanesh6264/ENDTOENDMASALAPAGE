@@ -14,9 +14,9 @@ export default function Footer() {
           </p>
           <h3 className="footer-title">Follow Us</h3>
           <div className="social-links">
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/15GzKti81N/"><i className="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/abhirra_masala?igsh=NzJveHh1ODdodDht"><i className="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@nagarasu696?si=5rTCRvRGlZL_BwXt"><i className="fab fa-youtube"></i></a>
           </div>
 
         </div>

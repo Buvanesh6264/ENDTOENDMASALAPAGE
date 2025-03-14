@@ -1,196 +1,123 @@
-
 .ShopNav-navbar {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   color: black;
   width: 100%;
   padding: 15px 20px;
   position: sticky !important;
-  overflow: hidden;
   top: 0;
-  z-index: 9999; 
+  z-index: 9999;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    /* text-align: center; */
-    flex: 1;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  .ShopNav-logo img {
-    max-width: 100px;
-    height: 30px; 
-    object-fit: contain; 
-    /* border-radius: 70px; */
-  }
-  
-  .ShopNav-toggle-button {
-    font-size: 24px;
-    cursor: pointer;
-    display: none; 
-  }
-  
-  .ShopNav-nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .ShopNav-nav-links li {
-    display: inline-block;
-  }
-  
-  .ShopNav-nav-links a{
-    text-decoration: none;
-    color: black;
-    /* padding: 10px 15px; */
-    font-size: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .ShopNav-nav-links a:hover{
-    color: #ff4500;
-  
-  }
-  .ShopNav-sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px;  
-    width: 250px;
-    height: auto;
-    background-color: #222;
-    padding-top: 60px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    z-index: inherit;
-    background: rgba( 255, 255, 255, 0.35 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 10px );
-  -webkit-backdrop-filter: blur( 10px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  }
-  
-  .ShopNav-sidebar.open {
-    left: 0;
-  }
-  
-  .ShopNav-sidebar-links {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .ShopNav-sidebar-links li {
-    padding: 15px;
-    border-bottom: 1px solid #444;
-  }
-  
-  .ShopNav-sidebar-links a{
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    text-align: left;
-    width: 100%;
-  }
-  .ShopNav-sidebar-links a:hover{
-    color: hsla(208, 56%, 54%, 0.466);
-  }
-  
-  .ShopNav-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 900;
-  }
-  
- 
-.nav-cart {
-    display: flex;
-    align-items: center;
-    padding: 6px 12px;
-    border-radius: 20px;
-    text-decoration: none;
-    position: relative;
-    color: #333;
-    font-weight: 600;
-  }
-  
-  .nav-cart-icon {
-    font-size: 22px;
-  color: #333;
-  position: relative;
-  }
-  
-  .nav-cart-badge {
-    position: absolute;
-    top: -5px;
-    left: 12px;
-    background: black;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-  .profile-icon{
-    font-size: 22px;
-    color: #333;
-    position: relative;
-  }
-  .nav-cart-price {
-    font-size: 14px;
-  color: #333;
-  font-weight: bold;
-  margin-left: 8px;
-  }
-.ShopNav-navbar {
+.ShopNav-logo-img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.ShopNav-toggle-button {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+}
+
+.ShopNav-nav-links {
+  list-style: none;
   display: flex;
+  gap: 20px;
   align-items: center;
-  justify-content: space-between; 
-  background: white;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1000;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ShopNav-nav-links li {
+  display: inline-block;
+}
+
+.ShopNav-nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.ShopNav-nav-links a:hover {
+  color: #ff4500;
+}
+
+.ShopNav-sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  backdrop-filter: blur(10px);
+}
+
+.ShopNav-sidebar.open {
+  left: 0;
+}
+
+.ShopNav-sidebar-links {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.ShopNav-sidebar-links li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  color: black;
+}
+
+.ShopNav-sidebar-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease-in-out;
+}
+
+.ShopNav-sidebar-links a:hover {
+  color: #ff4500;
+}
+
+.ShopNav-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
 }
 
 .profile-section {
@@ -199,33 +126,35 @@
   align-items: center;
   cursor: pointer;
 }
-.ShopNav-logo-img{
-  width: 200px;
-  height: 80px;
+
+.profile-icon {
+  font-size: 22px;
+  color: #333;
 }
+
 .profile-modal {
   position: absolute;
-  top: 22px;
-  right: -140px; 
-  width: 165px;
+  top: 40px;
+  right: 0;
+  width: 150px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 5px;  
-  
-  z-index: 1;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .modal-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px !important;
+  font-size: 14px !important;
   color: #333;
   text-decoration: none;
+  /* padding: 8px; */
   border-radius: 5px;
   transition: background 0.3s ease-in-out;
 }
@@ -234,44 +163,52 @@
   background: #f3f3f3;
 }
 
-  @media (max-width: 768px) {
-    .ShopNav-toggle-button {
-      display: block;
-      position: absolute;
-      right: 20px;
-      top: 15px;
-    }
-  
-    .ShopNav-nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #333;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-    }
-  
-    .ShopNav-nav-links.open {
-      display: flex;
-    }
-    .ShopNav-logo img {
-      max-width: 100px;
-      height: 30px; 
-      object-fit: contain; 
-      border-radius: 70px;
-      
-    }
-    .ShopNav-nav-links li {
-      display: block;
-      margin: 10px 0;
-    }
-    .ShopNav-logo{
-      text-align: center;
-      justify-content: center;
-    }
+.nav-cart {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: relative;
+  color: #333;
+  font-weight: 600;
+}
+
+.nav-cart-icon {
+  font-size: 22px;
+  color: #333;
+  position: relative;
+}
+
+.nav-cart-badge {
+  position: absolute;
+  top: -5px;
+  left: 12px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.nav-cart-price {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .ShopNav-toggle-button {
+    display: block;
   }
-  
+
+  .ShopNav-nav-links {
+    display: none;
+  }
+}
