@@ -1,0 +1,171 @@
+[{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e72"
+  },
+  "id": 1,
+  "name": "Turmeric Powder",
+  "category": "Pure Spices",
+  "image": "product7.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e73"
+  },
+  "id": 2,
+  "name": "Chilli Powder",
+  "category": "Pure Spices",
+  "image": "product4.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e74"
+  },
+  "id": 3,
+  "name": "Coriander Powder",
+  "category": "Pure Spices",
+  "image": "product5.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e75"
+  },
+  "id": 4,
+  "name": "Pepper Powder",
+  "category": "Pure Spices",
+  "image": "product10.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e76"
+  },
+  "id": 5,
+  "name": "Curry Masala Powder",
+  "category": "Spice Blends",
+  "image": "product1.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e77"
+  },
+  "id": 6,
+  "name": "Fish Fry Masala",
+  "category": "Spice Blends",
+  "image": "product2.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e78"
+  },
+  "id": 7,
+  "name": "Fish Curry Masala",
+  "category": "Spice Blends",
+  "image": "product6.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e79"
+  },
+  "id": 8,
+  "name": "Sambar Powder",
+  "category": "Spice Blends",
+  "image": "product9.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7a"
+  },
+  "id": 9,
+  "name": "Chicken Masala",
+  "category": "Spice Blends",
+  "image": "product3.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7b"
+  },
+  "id": 10,
+  "name": "Chilli Chicken 65",
+  "category": "Spice Blends",
+  "image": "product8.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7c"
+  },
+  "id": 11,
+  "name": "Mutton Masala",
+  "category": "Spice Blends",
+  "image": "product12.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7d"
+  },
+  "id": 12,
+  "name": "Rasam Powder",
+  "category": "Spice Blends",
+  "image": "product11.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7e"
+  },
+  "id": 13,
+  "name": "Briyani Masala",
+  "category": "Spice Blends",
+  "image": "product14.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e7f"
+  },
+  "id": 14,
+  "name": "Curry Powder",
+  "category": "Spice Blends",
+  "image": "product15.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e80"
+  },
+  "id": 15,
+  "name": "Garam Masala",
+  "category": "Spice Blends",
+  "image": "product16.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e81"
+  },
+  "id": 16,
+  "name": "Ragi Flour",
+  "category": "Mix And Flour",
+  "image": "product17.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e82"
+  },
+  "id": 17,
+  "name": "Whole Wheat Atta",
+  "category": "Mix And Flour",
+  "image": "product18.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e83"
+  },
+  "id": 18,
+  "name": "Bajji Bonda Mix",
+  "category": "Mix And Flour",
+  "image": "product20.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cfe26fa5d7218a374a3e84"
+  },
+  "id": 19,
+  "name": "Chili Chutney Powder",
+  "category": "Podi Mix",
+  "image": "product13.jpg"
+}]

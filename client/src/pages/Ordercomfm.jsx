@@ -12,6 +12,11 @@ const OrderConfirmation = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
     const storedTotal = sessionStorage.getItem("orderamount") || 0;
     setOrderTotal(storedTotal);
 

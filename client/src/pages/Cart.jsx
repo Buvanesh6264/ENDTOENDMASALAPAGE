@@ -11,6 +11,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    
     const token = sessionStorage.getItem("token");
     if (!token) {
       navigate("/login");

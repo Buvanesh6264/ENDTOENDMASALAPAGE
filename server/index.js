@@ -10,9 +10,9 @@ const uri = "mongodb://localhost:27017";
 const dbName = "abhirradb";
 const collectionNameforuser = "users";
 const collectionNameforrecipes = "recipes";
-const collectionNameforshop = "shopdata";
-const collectionNameforproducts = "products";
-const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key";
+const collectionNameforshop = "products";
+// const collectionNameforproducts = "products";
+const JWT_SECRET = process.env.JWT_SECRET || "Thisismy";
 
 app.use(express.json());
 app.use(require("cors")());
@@ -100,7 +100,7 @@ app.get("/getproducts", async (req, res) => {
     try {
       await client.connect();
       const db = client.db(dbName);
-      const collection = db.collection(collectionNameforproducts);
+      const collection = db.collection(collectionNameforshop);
   
       const { category, page = 1, limit = 8 } = req.query;
       const query = category && category !== "All" ? { category } : {};
@@ -126,7 +126,7 @@ app.get("/getcategories", async (req, res) => {
     try {
       await client.connect();
       const db = client.db(dbName);
-      const collection = db.collection(collectionNameforproducts);
+      const collection = db.collection(collectionNameforshop);
       
       const categories = await collection.distinct("category");
       res.status(200).json({ categories: ["All", ...categories] });

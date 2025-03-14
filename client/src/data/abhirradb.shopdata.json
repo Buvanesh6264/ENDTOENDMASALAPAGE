@@ -1,0 +1,376 @@
+[{
+  "id": 1,
+  "name": "Sambar Powder",
+  "category": "Spice Blends",
+  "image": "product9.jpg",
+  "discount": 10,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 26,
+      "mrp": 32
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    },
+    {
+      "size": "500g",
+      "price": 245,
+      "mrp": 260
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 2,
+  "name": "Rasam Powder",
+  "category": "Spice Blends",
+  "image": "product11.jpg",
+  "discount": 7,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 29,
+      "mrp": 35
+    },
+    {
+      "size": "20g",
+      "price": 17,
+      "mrp": 20
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 3,
+  "name": "Fish Curry Masala",
+  "category": "Spice Blends",
+  "image": "product6.jpg",
+  "weights": [
+    {
+      "size": "50g",
+      "price": 23,
+      "mrp": 30
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 4,
+  "name": "Fish Fry Masala",
+  "category": "Spice Blends",
+  "image": "product2.jpg",
+  "discount": 5,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 27,
+      "mrp": 32
+    },
+    {
+      "size": "20g",
+      "price": 12,
+      "mrp": 20
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 5,
+  "name": "Chicken Masala",
+  "category": "Spice Blends",
+  "image": "product3.jpg",
+  "discount": 6,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 27,
+      "mrp": 35
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    },
+    {
+      "size": "500g",
+      "price": 245,
+      "mrp": 260
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 6,
+  "name": "Kulambu Masala Powder",
+  "image": "product1.jpg",
+  "category": "Spice Blends",
+  "discount": 4,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 26,
+      "mrp": 32
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    }
+  ],
+  "inStock": false
+},
+{
+  "id": 7,
+  "name": "Turmeric Powder",
+  "image": "product7.jpg",
+  "category": "Pure Spices",
+  "discount": 10,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 22,
+      "mrp": 28
+    },
+    {
+      "size": "20g",
+      "price": 12,
+      "mrp": 18
+    },
+    {
+      "size": "100g",
+      "price": 35,
+      "mrp": 40
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 8,
+  "name": "Coriander Powder",
+  "category": "Pure Spices",
+  "image": "product5.jpg",
+  "discount": 7,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 18,
+      "mrp": 25
+    },
+    {
+      "size": "20g",
+      "price": 10,
+      "mrp": 18
+    },
+    {
+      "size": "500g",
+      "price": 149,
+      "mrp": 160
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 10,
+  "name": "Pepper Powder",
+  "category": "Pure Spices",
+  "image": "product10.jpg",
+  "weights": [
+    {
+      "size": "50g",
+      "price": 70,
+      "mrp": 90
+    },
+    {
+      "size": "20g",
+      "price": 30,
+      "mrp": 38
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 11,
+  "name": "Chilli Chicken 65",
+  "category": "Spice Blends",
+  "image": "product8.jpg",
+  "discount": 5,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 27,
+      "mrp": 35
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 12,
+  "name": "Garam Masala",
+  "category": "Spice Blends",
+  "image": "product16.jpg",
+  "discount": 6,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 37,
+      "mrp": 42
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 12,
+  "name": "Curry Powder",
+  "category": "Spice Blends",
+  "image": "product15.jpg",
+  "discount": 2,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 35,
+      "mrp": 40
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 13,
+  "name": "Ragi Flour",
+  "category": "Mix And Flour",
+  "image": "product17.jpg",
+  "discount": 4,
+  "weights": [
+    {
+      "size": "500g",
+      "price": 60,
+      "mrp": 70
+    }
+  ],
+  "inStock": false
+},
+{
+  "id": 14,
+  "name": "Whole Wheat Atta",
+  "category": "Mix And Flour",
+  "image": "product18.jpg",
+  "weights": [
+    {
+      "size": "500g",
+      "price": 40,
+      "mrp": 45
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 15,
+  "name": "Bajji Bonda Mix",
+  "category": "Mix And Flour",
+  "image": "product20.jpg",
+  "discount": 7,
+  "weights": [
+    {
+      "size": "250g",
+      "price": 35,
+      "mrp": 40
+    },
+    {
+      "size": "500g",
+      "price": 70,
+      "mrp": 78
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 16,
+  "name": "Idli Chutney Powder",
+  "category": "Podi Mix",
+  "image": "product13.jpg",
+  "weights": [
+    {
+      "size": "50g",
+      "price": 17,
+      "mrp": 22
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 17,
+  "name": "Mutton Masala",
+  "category": "Spice Blends",
+  "image": "product12.jpg",
+  "discount": 5,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 34,
+      "mrp": 42
+    },
+    {
+      "size": "20g",
+      "price": 17,
+      "mrp": 20
+    },
+    {
+      "size": "500g",
+      "price": 279,
+      "mrp": 290
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 18,
+  "name": "Chilli Powder",
+  "category": "Pure Spices",
+  "image": "product4.jpg",
+  "discount": 6,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 32,
+      "mrp": 38
+    },
+    {
+      "size": "20g",
+      "price": 14,
+      "mrp": 20
+    },
+    {
+      "size": "500g",
+      "price": 250,
+      "mrp": 270
+    }
+  ],
+  "inStock": true
+},
+{
+  "id": 19,
+  "name": "Briyani Masala",
+  "category": "Spice Blends",
+  "image": "product14.jpg",
+  "discount": 4,
+  "weights": [
+    {
+      "size": "50g",
+      "price": 37,
+      "mrp": 45
+    }
+  ],
+  "inStock": false
+}]
